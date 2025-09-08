@@ -12,7 +12,7 @@ for _,v in char:GetDescendants() do
 	end;
 end;
 for _,v in getgc(false) do
-	if type(v) == "function" and islclosure(v) and #debug.getupvalues(v) == 7 and table.find(debug.getupvalues(v), event) then
+	if type(v) == "function" and islclosure(v) and getfunctionhash(v) == "E1293583F9A3889AD00F7378CA33510768AEAC34033B87A725278A8812810F6B9646E676CDD564024D4300890673AD32" then
 		local hook; hook = hookfunction(v, newlclosure(@native function(...)
 			local args = {...};
 			if not table.find(args, "Handshake") then return; end;
