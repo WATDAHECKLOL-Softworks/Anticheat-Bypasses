@@ -9,6 +9,10 @@ for _,v in getconnections(script_context.Error) do
         end;
     end;  
 end;
+for _,v in getconnections(event.Event) do
+    hookfunction(v.Function, function()
+    end);
+end;
 local Fire; Fire = hookfunction(event.Fire, newcclosure(function(...)
     if getthreadidentity() ~= 2 then return Fire(...); end;
     local args = {...};
